@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useSearchParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
+import { Helmet } from 'react-helmet';
 
 const Registration = () => {
     const { register, handleSubmit,reset, formState: { errors } } = useForm();
@@ -34,6 +35,7 @@ createUser(data.email, data.password)
     }
     return (
         <>
+        <Helmet> <title>Sports Camp | Registration</title></Helmet>
            < div style={{
         backgroundImage:
           "url(/src/assets/desktop-wallpaper-abstract-login-page-thumbnail.jpg)",

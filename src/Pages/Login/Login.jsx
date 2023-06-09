@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaRegEye } from "react-icons/fa";
+import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -15,6 +17,8 @@ const Login = () => {
   const onSubmit = (data) => console.log(data);
 
   return (
+    <>
+     <Helmet> <title>Sports Camp | Login</title></Helmet>
     <div
       style={{
         backgroundImage:
@@ -80,9 +84,11 @@ const Login = () => {
           >
             New Here? create an account
           </Link>
+          <SocialLogin></SocialLogin>
         </div>
       </div>
     </div>
+    </>
   );
 };
 
