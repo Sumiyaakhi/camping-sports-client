@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../assets/summerCamp.jpg";
 import {  Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProviders";
 
 const Navbar = () => {
+  const { user} = useContext(AuthContext)
   const navItems = <>
   <li><NavLink className='bg-blue-400 text-white' to='/'>Home</NavLink></li>
   <li><NavLink to='/instructor'>Instructors</NavLink></li>
   <li><NavLink to='/classes'>Classes</NavLink></li>
-  <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+  { user? <li><NavLink to='/dashboard'>Dashboard</NavLink></li> : <></>}
    </>
   return (
     <>
@@ -50,10 +52,12 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-       
-        <Link to='/login'><button className="btn bg-blue-500 text-white">Log in</button></Link>
-        <button className="btn bg-blue-500 text-white">Log Out</button>
-        <img src='' alt="" />
+       {
+        user ? <><button className="btn bg-blue-500 text-white">Log Out</button>
+        <div className="avatar"><div className="w-12 rounded-full ms-3"><img  src={user.photoURL} alt="" /></div></div></> : <Link to='/login'><button className="btn bg-blue-500 text-white">Log in</button></Link>
+       }
+        
+        
       </div>
     </div>
     </>
