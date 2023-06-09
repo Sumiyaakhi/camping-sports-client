@@ -76,7 +76,7 @@ const Login = () => {
           </form>
           <Link
             className="text-blue-500 text-center underline mb-4"
-            to="/signup"
+            to="/registration"
           >
             New Here? create an account
           </Link>
