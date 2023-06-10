@@ -1,0 +1,93 @@
+[
+    {
+      "_id": "6149b9c60a6e9b12f809f736",
+      "name": "Soccer Camp",
+      "image": "https://i.ibb.co/Y8rxq3Z/download-6.jpg",
+      "price": 50,
+      "instructor": "John Smith",
+      "availableSeats": 20,
+      "category": "Team Sports"
+    },
+    {
+      "_id": "6149b9c60a6e9b12f809f737",
+      "name": "Basketball Camp",
+      "image": "basketball.jpg",
+      "price": 60,
+      "instructor": "Emily Johnson",
+      "availableSeats": 15,
+      "category": "Team Sports"
+    },
+    {
+      "_id": "6149b9c60a6e9b12f809f738",
+      "name": "Tennis Clinic",
+      "image": "tennis.jpg",
+      "price": 70,
+      "instructor": "Michael Davis",
+      "availableSeats": 10,
+      "category": "Racket Sports"
+    },
+    {
+      "_id": "6149b9c60a6e9b12f809f739",
+      "name": "Swimming Lessons",
+      "image": "swimming.jpg",
+      "price": 55,
+      "instructor": "Sarah Wilson",
+      "availableSeats": 12,
+      "category": "Water Sports"
+    },
+    {
+      "_id": "6149b9c60a6e9b12f809f73a",
+      "name": "Baseball Training",
+      "image": "baseball.jpg",
+      "price": 65,
+      "instructor": "David Johnson",
+      "availableSeats": 8,
+      "category": "Team Sports"
+    },
+    {
+      "_id": "6149b9c60a6e9b12f809f73b",
+      "name": "Golf Workshop",
+      "image": "golf.jpg",
+      "price": 80,
+      "instructor": "Jennifer Adams",
+      "availableSeats": 10,
+      "category": "Individual Sports"
+    },
+    {
+      "_id": "6149b9c60a6e9b12f809f73c",
+      "name": "Volleyball Clinic",
+      "image": "volleyball.jpg",
+      "price": 45,
+      "instructor": "Robert Wilson",
+      "availableSeats": 15,
+      "category": "Team Sports"
+    },
+    {
+      "_id": "6149b9c60a6e9b12f809f73d",
+      "name": "Martial Arts Workshop",
+      "image": "martial_arts.jpg",
+      "price": 75,
+      "instructor": "Jessica Lee",
+      "availableSeats": 12,
+      "category": "Combat Sports"
+    },
+    {
+      "_id": "6149b9c60a6e9b12f809f73e",
+      "name": "Archery Lessons",
+      "image": "archery.jpg",
+      "price": 60,
+      "instructor": "Matthew Thompson",
+      "availableSeats": 10,
+      "category": "Individual Sports"
+    },
+    {
+      "_id": "6149b9c60a6e9b12f809f73f",
+      "name": "Cycling Adventure",
+      "image": "cycling.jpg",
+      "price": 90,
+      "instructor": "Laura Martinez",
+      "availableSeats": 6,
+      "category": "Outdoor Sports"
+    }
+  ]
+  

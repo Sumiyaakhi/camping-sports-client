@@ -1,0 +1,283 @@
+[
+    {
+        "_id": "6149b9c60a6e9b12f809f719",
+        "name": "Swimming Lessons",
+        "category": "Water Sports",
+        "image": "swimming.jpg",
+        "price": 50
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f71a",
+        "name": "Surfing Lessons",
+        "category": "Water Sports",
+        "image": "surfing.jpg",
+        "price": 90
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f71b",
+        "name": "Kayaking Adventure",
+        "category": "Water Sports",
+        "image": "kayaking.jpg",
+        "price": 65
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f71c",
+        "name": "Scuba Diving Course",
+        "category": "Water Sports",
+        "image": "scuba_diving.jpg",
+        "price": 120
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f71d",
+        "name": "Water Skiing Lessons",
+        "category": "Water Sports",
+        "image": "water_skiing.jpg",
+        "price": 80
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f71e",
+        "name": "Wakeboarding Classes",
+        "category": "Water Sports",
+        "image": "wakeboarding.jpg",
+        "price": 75
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f71f",
+        "name": "Soccer Training",
+        "category": "Team Sports",
+        "image": "soccer.jpg",
+        "price": 60
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f720",
+        "name": "Basketball Clinic",
+        "category": "Team Sports",
+        "image": "basketball.jpg",
+        "price": 70
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f721",
+        "name": "Cricket Coaching",
+        "category": "Team Sports",
+        "image": "cricket.jpg",
+        "price": 70
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f722",
+        "name": "Baseball Training",
+        "category": "Team Sports",
+        "image": "baseball.jpg",
+        "price": 55
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f723",
+        "name": "Volleyball League",
+        "category": "Team Sports",
+        "image": "volleyball.jpg",
+        "price": 65
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f724",
+        "name": "Hockey Camp",
+        "category": "Team Sports",
+        "image": "hockey.jpg",
+        "price": 80
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f725",
+        "name": "Gymnastics Classes",
+        "category": "Artistic Sports",
+        "image": "gymnastics.jpg",
+        "price": 75
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f726",
+        "name": "Dance Workshop",
+        "category": "Artistic Sports",
+        "image": "dance.jpg",
+        "price": 65
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f727",
+        "name": "Figure Skating Lessons",
+        "category": "Artistic Sports",
+        "image": "figure_skating.jpg",
+        "price": 85
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f728",
+        "name": "Painting and Drawing Classes",
+        "category": "Artistic Sports",
+        "image": "painting_drawing.jpg",
+        "price": 60
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f729",
+        "name": "Synchronized Swimming",
+        "category": "Artistic Sports",
+        "image": "synchronized_swimming.jpg",
+        "price": 70
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f72a",
+        "name": "Ballet Lessons",
+        "category": "Artistic Sports",
+        "image": "ballet.jpg",
+        "price": 80
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f72b",
+        "name": "Beach Volleyball",
+        "category": "Outdoor Sports",
+        "image": "volleyball.jpg",
+        "price": 55
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f72c",
+        "name": "Cycling Camp",
+        "category": "Outdoor Sports",
+        "image": "cycling.jpg",
+        "price": 60
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f72d",
+        "name": "Hiking Adventure",
+        "category": "Outdoor Sports",
+        "image": "hiking.jpg",
+        "price": 65
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f72e",
+        "name": "Rock Climbing",
+        "category": "Outdoor Sports",
+        "image": "rock_climbing.jpg",
+        "price": 70
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f72f",
+        "name": "Surf Camp",
+        "category": "Outdoor Sports",
+        "image": "surf.jpg",
+        "price": 80
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f730",
+        "name": "Adventure Racing",
+        "category": "Outdoor Sports",
+        "image": "adventure_racing.jpg",
+        "price": 90
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f731",
+        "name": "Martial Arts",
+        "category": "Combat Sports",
+        "image": "martial_arts.jpg",
+        "price": 75
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f732",
+        "name": "Boxing Training",
+        "category": "Combat Sports",
+        "image": "boxing.jpg",
+        "price": 80
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f733",
+        "name": "Wrestling Practice",
+        "category": "Combat Sports",
+        "image": "wrestling.jpg",
+        "price": 70
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f734",
+        "name": "Judo Classes",
+        "category": "Combat Sports",
+        "image": "judo.jpg",
+        "price": 65
+      },
+      {
+        "_id": "6149b9c60a6e9b12f809f735",
+        "name": "Taekwondo Lessons",
+        "category": "Combat Sports",
+        "image": "taekwondo.jpg",
+        "price": 75
+      },
+      {
+        "_id": "609c2ebed0a9553594c8581e",
+        "name": "Tennis Camp",
+        "category": "Racket Sports",
+        "image": "tennis.jpg",
+        "price": 80
+      },
+      {
+        "_id": "609c2ebed0a9553594c8581f",
+        "name": "Badminton Training",
+        "category": "Racket Sports",
+        "image": "badminton.jpg",
+        "price": 50
+      },
+      {
+        "_id": "609c2ebed0a9553594c85820",
+        "name": "Table Tennis Coaching",
+        "category": "Racket Sports",
+        "image": "table_tennis.jpg",
+        "price": 55
+      },
+      {
+        "_id": "609c2ebed0a9553594c85821",
+        "name": "Squash Lessons",
+        "category": "Racket Sports",
+        "image": "squash.jpg",
+        "price": 65
+      },
+      {
+        "_id": "609c2ebed0a9553594c85822",
+        "name": "Pickleball Workshop",
+        "category": "Racket Sports",
+        "image": "pickleball.jpg",
+        "price": 45
+      },
+      {
+        "_id": "609c2ebed0a9553594c85823",
+        "name": "Racketball Clinic",
+        "category": "Racket Sports",
+        "image": "racketball.jpg",
+        "price": 70
+      },
+      {
+        "_id": "609c2ebed0a9553594c85824",
+        "name": "Taekwondo Classes",
+        "category": "Martial Arts",
+        "image": "taekwondo.jpg",
+        "price": 70
+      },
+      {
+        "_id": "609c2ebed0a9553594c85825",
+        "name": "Karate Classes",
+        "category": "Martial Arts",
+        "image": "karate.jpg",
+        "price": 55
+      },
+      {
+        "_id": "609c2ebed0a9553594c85826",
+        "name": "Kung Fu Workshop",
+        "category": "Martial Arts",
+        "image": "kungfu.jpg",
+        "price": 75
+      },
+      {
+        "_id": "609c2ebed0a9553594c85827",
+        "name": "Judo Training",
+        "category": "Martial Arts",
+        "image": "judo.jpg",
+        "price": 60
+      },
+      {
+        "_id": "609c2ebed0a9553594c85828",
+        "name": "Brazilian Jiu-Jitsu",
+        "category": "Martial Arts",
+        "image": "brazilian_jiu_jitsu.jpg",
+        "price": 85
+      }
+      
+]

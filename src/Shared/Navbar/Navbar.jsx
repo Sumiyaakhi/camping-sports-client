@@ -6,7 +6,7 @@ import { AuthContext } from "../../Providers/AuthProviders";
 const Navbar = () => {
   const { user, logOut} = useContext(AuthContext)
   const navItems = <>
-  <li><NavLink className='bg-blue-400 text-white' to='/'>Home</NavLink></li>
+  <li><NavLink to='/'>Home</NavLink></li>
   <li><NavLink to='/instructor'>Instructors</NavLink></li>
   <li><NavLink to='/classes'>Classes</NavLink></li>
   { user? <li><NavLink to='/dashboard'>Dashboard</NavLink></li> : <></>}

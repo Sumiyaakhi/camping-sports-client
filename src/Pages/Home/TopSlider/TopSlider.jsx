@@ -8,12 +8,17 @@ import img4 from "../../../assets/img4.jpg";
 import img5 from "../../../assets/img5.jpg";
 import img6 from "../../../assets/img6.png";
 import img7 from "../../../assets/img7.jpg";
+import SectionTItle from "../../../Components/SectionTitle/SectionTItle";
 
 const TopSlider = () => {
   return (
     <div className="">
         <div className=" my-6">
-        <h1 className="text-6xl uppercase text-center text-blue-300 font-serif font-semibold">make your summer unforgotable....!</h1>
+            <SectionTItle 
+              heading='make your summer unforgotable....!'
+              subHeading='top slider '
+            ></SectionTItle>
+        <h1 className="text-6xl uppercase text-center text-blue-300 font-serif font-semibold"></h1>
       </div>
       <Carousel className="text-center">
         <div>
