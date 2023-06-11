@@ -1,17 +1,19 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
 import { useForm } from 'react-hook-form';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 import { Helmet } from 'react-helmet';
 
 const Registration = () => {
     const { register, handleSubmit,reset, formState: { errors } } = useForm();
+    const navigate = useNavigate();
     const [confirmPassword, setConfirmPassword] = useState("")
     const {createUser,updateUserProfile} = useContext(AuthContext)
     const onSubmit = data => {
-        if(data.password !== confirmPassword){
+      console.log(data.password,data.confirmPassword);
+        if(data.password !== data.confirmPassword){
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
@@ -26,10 +28,27 @@ createUser(data.email, data.password)
     console.log(loggedUser);
     updateUserProfile(data.name, data.photoURL)
     .then(()=> {
-        // const savedUser = { name: data.name, email: data.email}
-
+        const savedUser = { name: data.name, email: data.email, image:data.photoURL, role:"User"}
+      fetch('http://localhost:5000/users',{
+        method:'POST',
+        headers:{
+          'content-type': 'application/json'
+        },
+        body:JSON.stringify(savedUser)
+      })
+      .then(res => res.json())
+      .then(data => {
+        if(data.insertedId){
+          reset();
+          Swal.fire({
+            icon: 'success',
+            title: 'sign up successful',
+          })
+          navigate('/')
+        }
+      })
     })
-    .catch(error =>console.log(error))
+    
 })
 
     }

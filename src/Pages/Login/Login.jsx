@@ -1,21 +1,37 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaRegEye } from "react-icons/fa";
 import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 import { Helmet } from "react-helmet";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+   const navigate = useNavigate();
+   const location = useLocation();
 
+   const from = location.state?.from?.pathname || '/'
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
-
+  const onSubmit = (data) => {
+    
+    console.log(data);
+    if(data){
+      Swal.fire({
+        icon: 'success',
+        title: 'Login Successful',
+       
+      })
+      navigate(from, {replace: true})
+    }
+  }
+    
+  
   return (
     <>
      <Helmet> <title>Sports Camp | Login</title></Helmet>

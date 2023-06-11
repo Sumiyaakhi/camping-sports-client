@@ -1,22 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import ClassesCard from './ClassesCard';
+import useClasses from '../../Components/hooks/useClasses';
 
 const Classes = () => {
-    const [classes, setClasses] = useState([]);
-    const [loading, setLoading] = useState(false);
-    useEffect(()=>{
-        fetch('classes.json')
-        .then(res => res.json())
-        .then(data=> {
-            setLoading(true)
-            console.log(data);
-            setClasses(data);
-            setLoading(false)
-        })
-    },[])
+    const [classes, loading] = useClasses();
+    console.log(classes);
+    
+    
     return (
         <div className='md:ms-32 my-8'>
-            <div className='md:grid grid-cols-3 gap-4 '>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ms-8'>
             {
                classes.map(singleClass =>
                 <ClassesCard
