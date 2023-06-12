@@ -3,10 +3,12 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProviders';
 import { FaHome, FaBookmark, FaUser, FaWallet, FaBuffer } from 'react-icons/fa';
 import { TiTick } from 'react-icons/ti';
+import useAdmin from '../Components/hooks/useAdmin';
 
 const Dashboard = () => {
     const {user} = useContext(AuthContext);
-    const isAdmin = true;
+    // const isAdmin = false;
+    const isAdmin = useAdmin()
     const isInstructor =false ;
 
     return (

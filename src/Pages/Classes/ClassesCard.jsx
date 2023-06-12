@@ -20,12 +20,13 @@ const handleSelected = (data) =>{
    console.log(data);
    if(user){
     setIsButtonDisabled(true)
+    const classData = {name, image, price, instructor, availableSeats,email:user.email }
     fetch('http://localhost:5000/selectedclasses',{
       method:'POST',
       headers:{
         "content-type": "application/json"
       },
-      body:JSON.stringify(data)
+      body:JSON.stringify(classData)
     })
     .then(res => res.json())
     .then(data => {

@@ -3,13 +3,15 @@ import React, { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { AuthContext } from '../../../../Providers/AuthProviders';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../../../Components/hooks/useAxiosSecure';
 
 const ManageUsers = () => {
     const {user} = useContext(AuthContext);
     console.log(user);
+    const [axiosSecure] = useAxiosSecure();
     const {data: users = [], refetch} = useQuery(['users'],async()=>{
-        const res = await fetch('http://localhost:5000/users')
-        return res.json()
+        const res = await axiosSecure.get('/users')
+        return res.data;
     })
 
     const handleMakeAdmin = (user)=>{
