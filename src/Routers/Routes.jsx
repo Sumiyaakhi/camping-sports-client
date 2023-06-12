@@ -15,6 +15,9 @@ import ManageClasses from '../Pages/Dashboard/Admin/ManageClasses/ManageClasses'
 import ManageUsers from '../Pages/Dashboard/Admin/ManageUsers/ManageUsers';
 import AddAClass from '../Pages/Dashboard/Instructor/AddAClass/AddAClass';
 import MyClasses from '../Pages/Dashboard/Instructor/MyClasses/MyClasses';
+import AdminRoute from './AdminRoute';
+import InstructorRoute from './InstructorRoute';
+import InstructorInfo from '../Pages/InstructorInfo/InstructorInfo';
 
 const router = createBrowserRouter([
     {
@@ -37,6 +40,10 @@ const router = createBrowserRouter([
         {
           path:'/classes',
           element:<Classes></Classes>
+        },
+        {
+          path:'/instructor',
+          element:<InstructorInfo></InstructorInfo>
         }
       ]
     },
@@ -58,19 +65,20 @@ const router = createBrowserRouter([
         },
         {
           path:'manageClasses',
-          element:<ManageClasses></ManageClasses>
+          element:<AdminRoute><ManageClasses></ManageClasses></AdminRoute>
         },
         {
           path:'manageUsers',
-          element:<ManageUsers></ManageUsers>
+          element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>
         },
         {
           path:'addAClasses',
-          element:<AddAClass></AddAClass>
+          element:
+          <InstructorRoute><ManageClasses></ManageClasses></InstructorRoute>
         },
         {
           path:'myClasses',
-          element:<MyClasses></MyClasses>
+          element:<InstructorRoute><MyClasses></MyClasses></InstructorRoute>
         }
       ]
     }

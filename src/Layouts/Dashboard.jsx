@@ -2,14 +2,16 @@ import React, { useContext } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProviders';
 import { FaHome, FaBookmark, FaUser, FaWallet, FaBuffer } from 'react-icons/fa';
+import {AiFillHome} from'react-icons/ai';
 import { TiTick } from 'react-icons/ti';
 import useAdmin from '../Components/hooks/useAdmin';
+import useInstructor from '../Components/hooks/useInstructor';
 
 const Dashboard = () => {
     const {user} = useContext(AuthContext);
     // const isAdmin = false;
-    const isAdmin = useAdmin()
-    const isInstructor =false ;
+    const [isAdmin] = useAdmin()
+    const [isInstructor] = useInstructor() ;
 
     return (
         <div className="drawer lg:drawer-open md:w-10/12 mx-auto">
@@ -38,18 +40,22 @@ const Dashboard = () => {
         Manage Classes</NavLink></li>
         <li><NavLink to='/dashboard/manageUsers'> <FaUser></FaUser> Manage Users</NavLink></li>
         
-        </> : isInstructor ? <>
+
+        <li><NavLink to='/'>Home</NavLink></li>
+        </>
+       : isInstructor ? <>
         <li><NavLink to='/dashboard/instructorhome'> <FaHome></FaHome> Instructor Home</NavLink></li>
         <li><NavLink to='/dashboard/addAClasses'> <FaBuffer></FaBuffer>
         Add A Class</NavLink></li>
         <li><NavLink to='/dashboard/myClasses'> <FaWallet></FaWallet> My Classes</NavLink></li>
-
+        <li><NavLink to='/'>Home</NavLink></li>
         
         </> : <>
         
         <li><NavLink to='/dashboard/userhome'><FaHome></FaHome>User Home</NavLink></li>
         <li><NavLink to='/dashboard/selectedClasses'> <TiTick></TiTick>  My selected Classes</NavLink></li>
         <li><NavLink to='/dashboard/enrolledclasses'> <FaBookmark></FaBookmark> My Enrolled Classes</NavLink></li>
+        <li><NavLink to='/'> <AiFillHome></AiFillHome> Home</NavLink></li>
         </>
       }
 

@@ -24,7 +24,7 @@ const SocialLogin = () => {
         body:JSON.stringify(savedUser)
       })
       .then(res => res.json())
-      .then(data => {
+      .then(() => {
         
          
             navigate(from, {replace: true})

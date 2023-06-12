@@ -2,21 +2,23 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
 import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useAdmin from '../../Components/hooks/useAdmin';
+import useInstructor from '../../Components/hooks/useInstructor';
 
 const ClassesCard = ({singleClass}) => {
     const {  _id, image,name, price, availableSeats,instructor} = singleClass;
     // console.log(singleClass);
     // const updatedClass = singleClass;
+    const [isAdmin] = useAdmin();
+    const [isInstructor]= useInstructor();
     const {user} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    const [seats, setSeats] = useState(availableSeats);
+    // const [seats, setSeats] = useState(availableSeats);
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
 const handleSelected = (data) =>{
-  if(data){
-     setSeats(seats - 1);
-  }
+  
    console.log(data);
    if(user){
     setIsButtonDisabled(true)
@@ -70,10 +72,11 @@ const handleSelected = (data) =>{
         <h2 className="card-title">{name}</h2>
         <p>Instructor: {instructor}</p>
         <p>Price: ${price}</p>
-        <p>Available seat: {seats}</p>
+        <p>Available seat: {availableSeats}</p>
       
         <div className="card-actions justify-center">
-          <button disabled={isButtonDisabled} onClick={()=>handleSelected(singleClass)} className="btn bg-blue-400 text-white px-12"> {isButtonDisabled ? 'Selected' : 'Select'}</button>
+
+          <button  onClick={()=>handleSelected(singleClass)} className={isAdmin && isInstructor ? "btn-disabled" : "btn bg-blue-400 text-white px-12"}> Select</button>
         </div>
       </div>
     </div>
