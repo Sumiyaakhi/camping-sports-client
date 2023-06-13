@@ -12,6 +12,7 @@ import { RouterProvider } from "react-router-dom";
 import router from "./Routers/Routes";
 import AuthProviders from "./Providers/AuthProviders";
 import { HelmetProvider } from "react-helmet-async";
+import SelectedClassesCard from "./Pages/Dashboard/User/SelectedClasses/SelectedClassesCard";
 
 const queryClient = new QueryClient();
 
@@ -20,9 +21,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
       <HelmetProvider>
         <AuthProviders>
+         
           <QueryClientProvider client={queryClient}>
             <RouterProvider router={router} />
           </QueryClientProvider>
+          
+          
         </AuthProviders>
       </HelmetProvider>
     </React.StrictMode>

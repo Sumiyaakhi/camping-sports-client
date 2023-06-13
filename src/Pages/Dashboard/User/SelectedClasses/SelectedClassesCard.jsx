@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import queryString from 'query-string';
@@ -6,8 +6,9 @@ import queryString from 'query-string';
 
 const SelectedClassesCard = ({ selectedClass, index }) => {
   const { _id, name, image, price, instructor } = selectedClass;
+
 // console.log(price);
-const [classPrice, setClassPrice] = useState(0)
+const [classPrice, setClassPrice] = useState()
 console.log(classPrice);
   const handleDelete = (selectedClass) => {
     Swal.fire({
@@ -41,6 +42,7 @@ const handlePrice = (data) =>{
 }
 
   return (
+    <>
     <tr>
       <td>{index + 1}</td>
       <td>
@@ -67,12 +69,15 @@ const handlePrice = (data) =>{
       </td>
       <td>
       
-        <Link    to="/dashboard/payment"> 
+        <Link    to="/dashboard/payment" state={{price: price}}> 
           <button  onClick={()=> handlePrice(price)}  className="btn bg-blue-400 text-white btn-xs">pay</button>
         </Link>
       </td>
     </tr>
+    
+  </>
   );
+  
 };
 
 export default SelectedClassesCard;

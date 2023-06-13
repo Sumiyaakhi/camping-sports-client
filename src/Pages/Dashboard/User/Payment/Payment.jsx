@@ -9,9 +9,12 @@ import queryString from 'query-string';
 
 
 const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_GATEWAY_PK)
-const Payment = () => {
+const Payment = (props) => {
 
-   
+    const location = useLocation()
+    // console.log(props, "props");
+    const price = location.state?.price;
+   console.log(price);
 
     return (
         <div>
@@ -20,7 +23,7 @@ const Payment = () => {
             heading="payment "
             ></SectionTItle>
             <Elements  stripe={stripePromise}>
-                <CheckoutForm></CheckoutForm>
+                <CheckoutForm price={price}></CheckoutForm>
             </Elements>
         </div>
     );

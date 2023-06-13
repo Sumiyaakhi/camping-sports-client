@@ -20,6 +20,7 @@ import InstructorRoute from './InstructorRoute';
 import InstructorInfo from '../Pages/InstructorInfo/InstructorInfo';
 import Feedback from '../Pages/Dashboard/Admin/ManageClasses/Feedback';
 import Payment from '../Pages/Dashboard/User/Payment/Payment';
+import SelectedClassesCard from '../Pages/Dashboard/User/SelectedClasses/SelectedClassesCard';
 
 const router = createBrowserRouter([
     {
