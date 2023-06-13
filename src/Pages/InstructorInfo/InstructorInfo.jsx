@@ -4,9 +4,9 @@ import { Helmet } from 'react-helmet';
 import SectionTItle from '../../Components/SectionTitle/SectionTItle';
 
 const InstructorInfo = () => {
-    const [instructorsInfo, loading] = useInstructorInfo();
+    const [instructorsInfo] = useInstructorInfo();
     console.log(instructorsInfo);
-    const {name, image, _id, nameOfClasses, category, email, experience, numberOfClasses} = instructorsInfo;
+   
     return (
         <>
         <Helmet>

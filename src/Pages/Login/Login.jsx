@@ -17,7 +17,6 @@ const Login = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -25,7 +24,7 @@ const Login = () => {
     console.log(data);
     signIn(data.email, data.password).then((result) => {
       const user = result.user;
-      console.log(user);
+      console.log("logged in user",user);
       Swal.fire({
         icon: "success",
         title: "Login Successful",

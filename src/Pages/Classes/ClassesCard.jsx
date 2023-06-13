@@ -4,24 +4,26 @@ import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useAdmin from '../../Components/hooks/useAdmin';
 import useInstructor from '../../Components/hooks/useInstructor';
+import useSelectedClasses from '../../Components/hooks/useSelectedClasses';
 
 const ClassesCard = ({singleClass}) => {
     const {  _id, image,name, price, availableSeats,instructor} = singleClass;
     // console.log(singleClass);
     // const updatedClass = singleClass;
     const [isAdmin] = useAdmin();
+    // console.log(isAdmin)
     const [isInstructor]= useInstructor();
     const {user} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     // const [seats, setSeats] = useState(availableSeats);
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+    const [ , refetch] = useSelectedClasses();
 
 const handleSelected = (data) =>{
   
    console.log(data);
    if(user){
-    setIsButtonDisabled(true)
     const classData = {name, image, price, instructor, availableSeats,email:user.email }
     fetch('http://localhost:5000/selectedclasses',{
       method:'POST',
@@ -62,6 +64,18 @@ const handleSelected = (data) =>{
       }
     })
   }
+
+  // TODO: path kore seat komate hobe
+//  fetch(`http://localhost:5000/classes/${data._id}`,{
+//   method:'PATCH',
+//  })
+//  .then(res => res.json())
+//  .then(data => {
+// console.log(data);
+// // refetch();
+//  })
+
+
 }
 // console.log(updatedClass);
 
@@ -75,8 +89,12 @@ const handleSelected = (data) =>{
         <p>Available seat: {availableSeats}</p>
       
         <div className="card-actions justify-center">
-
-          <button  onClick={()=>handleSelected(singleClass)} className={isAdmin && isInstructor ? "btn-disabled" : "btn bg-blue-400 text-white px-12"}> Select</button>
+          {
+           availableSeats == 0 || isAdmin || isInstructor ? <button  onClick={()=>handleSelected(singleClass)} disabled  className="btn bg-blue-400 text-white px-12"> Select</button> 
+            :
+            <button  onClick={()=>handleSelected(singleClass)}  className= "btn bg-blue-400 text-white px-12"> Select</button>
+          }
+          {/* <button  onClick={()=>handleSelected(singleClass)} className={ isAdmin && isInstructor ? "disabled" : "btn bg-blue-400 text-white px-12"}> Select</button> */}
         </div>
       </div>
     </div>
