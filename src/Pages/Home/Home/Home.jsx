@@ -15,7 +15,7 @@ const Home = () => {
     
     return (
         // <div className='max-w-screen-xl mx-auto'>
-        <div className={themeMode === "light" ? "max-w-screen-xl mx-auto" : "bg-black text-blue-400 "}>
+        <div className={themeMode === "light" ? "max-w-screen-xl mx-auto" : "bg-gray-700 text-blue-400 "}>
             <div className='text-end'>
                 <button onClick={toggleThemeMode}>
                {
