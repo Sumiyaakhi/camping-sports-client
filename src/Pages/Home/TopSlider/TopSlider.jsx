@@ -10,7 +10,11 @@ import img6 from "../../../assets/img6.png";
 import img7 from "../../../assets/img7.jpg";
 import SectionTItle from "../../../Components/SectionTitle/SectionTItle";
 
+
+
 const TopSlider = () => {
+  
+
   return (
     <div className="">
         <div className=" my-6">
@@ -20,30 +24,26 @@ const TopSlider = () => {
             ></SectionTItle>
         <h1 className="text-6xl uppercase text-center text-blue-300 font-serif font-semibold"></h1>
       </div>
-      <Carousel className="text-center">
-        <div>
-          <img src={img7} />
-        </div>
-        <div>
-          <img src={img2} />
-        </div>
-        <div>
-          <img src={img3} />
-        </div>
-        <div>
-          <img src={img4} />
-        </div>
-        <div>
-          <img src={img5} />
-        </div>
-        <div>
-          <img src={img6} />
-        </div>
-        <div>
-          <img src={img1} />
-        </div>
-      </Carousel>
-      
+      <div className="carousel w-screen">
+  <div id="item1" className="carousel-item w-full">
+    <img src={img6} className="w-screen" />
+  </div> 
+  <div id="item2" className="carousel-item w-full">
+    <img src={img3} className="w-screen" />
+  </div> 
+  <div id="item3" className="carousel-item w-full">
+    <img src={img4} className="w-screen" />
+  </div> 
+  <div id="item4" className="carousel-item w-full">
+    <img src={img2} className="w-screen" />
+  </div>
+</div> 
+<div className="flex justify-center w-full py-2 gap-2">
+  <a href="#item1" className="btn btn-xs">1</a> 
+  <a href="#item2" className="btn btn-xs">2</a> 
+  <a href="#item3" className="btn btn-xs">3</a> 
+  <a href="#item4" className="btn btn-xs">4</a>
+</div>
     </div>
   );
 };
