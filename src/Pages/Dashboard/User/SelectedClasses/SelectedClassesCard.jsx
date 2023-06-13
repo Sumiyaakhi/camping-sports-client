@@ -2,15 +2,18 @@ import React, { createContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import queryString from 'query-string';
+import useSelectedClasses from "../../../../Components/hooks/useSelectedClasses";
 
 
 const SelectedClassesCard = ({ selectedClass, index }) => {
   const { _id, name, image, price, instructor } = selectedClass;
-
+const [, refetch] = useSelectedClasses();
 // console.log(price);
-const [classPrice, setClassPrice] = useState()
+const [classPrice, setClassPrice] = useState(0)
 console.log(classPrice);
+const [data, setData] = useState({})
   const handleDelete = (selectedClass) => {
+    refetch();
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -34,9 +37,15 @@ console.log(classPrice);
     });
   };
 
-const handlePrice = (data) =>{
-  console.log(data);
-  setClassPrice(data)
+const handlePrice = (price,className,classImage) =>{
+  console.log("price dekhooo",price, data);
+  setClassPrice(price);
+  const name =  className;
+  const image = classImage;
+  const classData = {name, image,price}
+  setData(classData)
+  console.log(classData);
+
   
   
 }
@@ -69,8 +78,8 @@ const handlePrice = (data) =>{
       </td>
       <td>
       
-        <Link    to="/dashboard/payment" state={{price: price}}> 
-          <button  onClick={()=> handlePrice(price)}  className="btn bg-blue-400 text-white btn-xs">pay</button>
+        <Link    to="/dashboard/payment" state={{price: price, selectedClass: selectedClass}}> 
+          <button  onClick={()=> handlePrice(price,name,image)}  className="btn bg-blue-400 text-white btn-xs">pay</button>
         </Link>
       </td>
     </tr>

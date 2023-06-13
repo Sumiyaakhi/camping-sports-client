@@ -21,6 +21,7 @@ import InstructorInfo from '../Pages/InstructorInfo/InstructorInfo';
 import Feedback from '../Pages/Dashboard/Admin/ManageClasses/Feedback';
 import Payment from '../Pages/Dashboard/User/Payment/Payment';
 import SelectedClassesCard from '../Pages/Dashboard/User/SelectedClasses/SelectedClassesCard';
+import PaymentHistory from '../Pages/Dashboard/User/PaymentHistory/PaymentHistory';
 
 const router = createBrowserRouter([
     {
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
         {
           path:'payment',
           element:<Payment></Payment>
+        },
+        {
+          path:'paymentHistory',
+          element:<PaymentHistory></PaymentHistory>
         },
         {
           path:'manageClasses',

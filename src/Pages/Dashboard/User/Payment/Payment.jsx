@@ -14,7 +14,8 @@ const Payment = (props) => {
     const location = useLocation()
     // console.log(props, "props");
     const price = location.state?.price;
-   console.log(price);
+    const selectedClass = location.state?.selectedClass;
+   console.log("price and class shown",price, selectedClass);
 
     return (
         <div>
@@ -23,7 +24,9 @@ const Payment = (props) => {
             heading="payment "
             ></SectionTItle>
             <Elements  stripe={stripePromise}>
-                <CheckoutForm price={price}></CheckoutForm>
+                <CheckoutForm price={price}
+                selectedClass={selectedClass}
+                ></CheckoutForm>
             </Elements>
         </div>
     );

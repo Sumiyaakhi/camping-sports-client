@@ -5,7 +5,7 @@ import { AuthContext } from '../../../../Providers/AuthProviders';
 import useAxiosSecure from '../../../../Components/hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 
-const CheckoutForm = ({price}) => {
+const CheckoutForm = ({price,selectedClass}) => {
     const stripe = useStripe();
     const elements = useElements();
     const { user } = useContext(AuthContext);
@@ -71,12 +71,14 @@ const CheckoutForm = ({price}) => {
               email: user?.email,
               transactionId: paymentIntent.id,
               price,
+              image:selectedClass.image,
+              instructor: selectedClass.instructor,
               date: new Date(),
-              quantity: cart.length,
+              quantity: 1,
               status: 'service pending',
-             cartItem:  cart.map( item => item._id),
-             menuItemId: cart.map(item => item.menuItemId),
-              itemNames: cart.map( item => item.name)
+             name: selectedClass.name,
+             _id: selectedClass._id,
+              
             }
             axiosSecure.post('/payments', payment)
             .then(res =>{
@@ -118,7 +120,7 @@ const CheckoutForm = ({price}) => {
         <button
           className="btn btn-sm  btn-accent bt-4"
           type="submit"
-          disabled={!stripe || !clientSecret  }
+          disabled={!stripe || !clientSecret || processing }
         >
           Pay
         </button>

@@ -48,18 +48,21 @@ const Dashboard = () => {
         <li><NavLink to='/dashboard/addClass'> <FaBuffer></FaBuffer>
         Add A Class</NavLink></li>
         <li><NavLink to='/dashboard/myClasses'> <FaWallet></FaWallet> My Classes</NavLink></li>
-        <li><NavLink to='/'>Home</NavLink></li>
+       
         
         </> : <>
         
         <li><NavLink to='/dashboard/userhome'><FaHome></FaHome>User Home</NavLink></li>
         <li><NavLink to='/dashboard/selectedClasses'> <TiTick></TiTick>  My selected Classes</NavLink></li>
-        <li><NavLink to='/dashboard/enrolledclasses'> <FaBookmark></FaBookmark> My Enrolled Classes</NavLink></li>
-        <li><NavLink to='/'> <AiFillHome></AiFillHome> Home</NavLink></li>
+        <li><NavLink to='/dashboard/enrollClasses'> <FaBookmark></FaBookmark> My Enrolled Classes</NavLink></li>
+        <li><NavLink to='/dashboard/paymentHistory'> <FaBookmark></FaBookmark> Payment History</NavLink></li>
+        
         </>
       }
+    
+    <div className='divider'></div>
 
-       
+       <li><NavLink to='/'> <AiFillHome></AiFillHome> Home</NavLink></li>
         {/* <li><NavLink>User Home</NavLink></li> */}
 
     </ul>

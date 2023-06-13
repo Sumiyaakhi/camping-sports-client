@@ -3,7 +3,7 @@ import useSelectedClasses from "../../../../Components/hooks/useSelectedClasses"
 import SelectedClassesCard from "./SelectedClassesCard";
 
 const SelectedClasses = () => {
-  const [selectedClasses] = useSelectedClasses();
+  const [selectedClasses, refetch] = useSelectedClasses();
   console.log("selected classesss", selectedClasses);
   return (
     <div className="overflow-x-auto">
@@ -26,6 +26,7 @@ const SelectedClasses = () => {
               key={selectedClass._id}
               selectedClass={selectedClass}
               index={index}
+              
             ></SelectedClassesCard>
           ))}
         </tbody>
