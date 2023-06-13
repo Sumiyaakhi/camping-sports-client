@@ -20,7 +20,7 @@ const InstructorInfo = () => {
         </div>
         <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4 mx-8 my-8'>
             {
-                instructorsInfo.map(instructor => <div key={instructor._id} className="card w-96 bg-base-100 shadow-xl">
+                instructorsInfo.map(instructor => <div key={instructor._id} className="card  bg-base-100 shadow-xl">
                 <figure><img className='w-96 h-64' src={instructor.image} alt="Shoes" /></figure>
                 <div className="card-body">
                   <h2 className="card-title">

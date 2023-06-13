@@ -14,9 +14,9 @@ const PopularClasses = () => {
         heading="Popular Classes"
         subHeading="Based on number of student"
       ></SectionTItle>
-      <div className="grid grid-cols-1 md:grid-cols-2  gap-4 ms-8 my-8 ">{
-      popularClass.map(singleClass =><div key={singleClass._id} className="card w-96 bg-base-100 shadow-xl">
-      <figure><img className=" h-96" src={singleClass.image} alt="Shoes" /></figure>
+      <div className="grid grid-cols-1 md:grid-cols-3  gap-4 ms-8 my-8 ">{
+      popularClass.map(singleClass =><div key={singleClass._id} className="card  bg-base-100 shadow-xl">
+      <figure><img className="w-screen h-96" src={singleClass.image} alt="Shoes" /></figure>
       <div className="card-body">
         <h2 className="card-title">
          {singleClass.name}
