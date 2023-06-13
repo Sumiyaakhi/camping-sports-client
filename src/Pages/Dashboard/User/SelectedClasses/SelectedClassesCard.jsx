@@ -55,7 +55,7 @@ const SelectedClassesCard = ({ selectedClass, index }) => {
         </button>
       </td>
       <td>
-        <Link to="">
+        <Link to="/dashboard/payment">
           <button className="btn bg-blue-400 text-white btn-xs">pay</button>
         </Link>
       </td>
