@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import queryString from 'query-string';
+
 
 const SelectedClassesCard = ({ selectedClass, index }) => {
   const { _id, name, image, price, instructor } = selectedClass;
-
+// console.log(price);
+const [classPrice, setClassPrice] = useState(0)
+console.log(classPrice);
   const handleDelete = (selectedClass) => {
     Swal.fire({
       title: "Are you sure?",
@@ -28,6 +32,13 @@ const SelectedClassesCard = ({ selectedClass, index }) => {
       }
     });
   };
+
+const handlePrice = (data) =>{
+  console.log(data);
+  setClassPrice(data)
+  
+  
+}
 
   return (
     <tr>
@@ -55,8 +66,9 @@ const SelectedClassesCard = ({ selectedClass, index }) => {
         </button>
       </td>
       <td>
-        <Link to="/dashboard/payment">
-          <button className="btn bg-blue-400 text-white btn-xs">pay</button>
+      
+        <Link    to="/dashboard/payment"> 
+          <button  onClick={()=> handlePrice(price)}  className="btn bg-blue-400 text-white btn-xs">pay</button>
         </Link>
       </td>
     </tr>
@@ -64,3 +76,6 @@ const SelectedClassesCard = ({ selectedClass, index }) => {
 };
 
 export default SelectedClassesCard;
+
+
+// to="/dashboard/payment"

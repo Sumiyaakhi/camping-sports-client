@@ -5,7 +5,7 @@ import { AuthContext } from '../../../../Providers/AuthProviders';
 import useAxiosSecure from '../../../../Components/hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 
-const CheckoutForm = () => {
+const CheckoutForm = ({price}) => {
     const stripe = useStripe();
     const elements = useElements();
     const { user } = useContext(AuthContext);
@@ -14,6 +14,7 @@ const CheckoutForm = () => {
   const [clientSecret, setClientSecret] = useState("");
   const [processing, setProcessing] = useState(false);
   const [transactionId, setTransactionId] = useState("")
+  console.log(price); 
   useEffect(() => {
     axiosSecure.post('/create-payment-intent', { price })
     .then((res) => {
