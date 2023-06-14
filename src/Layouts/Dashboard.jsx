@@ -1,17 +1,26 @@
 import React, { useContext } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProviders';
 import { FaHome, FaBookmark, FaUser, FaWallet, FaBuffer } from 'react-icons/fa';
 import {AiFillHome} from'react-icons/ai';
 import { TiTick } from 'react-icons/ti';
 import useAdmin from '../Components/hooks/useAdmin';
 import useInstructor from '../Components/hooks/useInstructor';
+import {BiLogOut} from 'react-icons/bi'
 
 const Dashboard = () => {
-    const {user} = useContext(AuthContext);
+    const {user, logOut} = useContext(AuthContext);
     // const isAdmin = false;
     const [isAdmin] = useAdmin()
     const [isInstructor] = useInstructor() ;
+
+    const handleLogOut = ()=>{
+      logOut()
+      .then(()=>{})
+      .catch(error => console.log(error))
+        }
+    
+
 
     return (
         <div className="drawer lg:drawer-open md:w-10/12 mx-auto">
@@ -40,11 +49,9 @@ const Dashboard = () => {
         Manage Classes</NavLink></li>
         <li><NavLink to='/dashboard/manageUsers'> <FaUser></FaUser> Manage Users</NavLink></li>
         
-
-        <li><NavLink to='/'>Home</NavLink></li>
         </>
        : isInstructor ? <>
-        <li><NavLink to='/dashboard/instructorhome'> <FaHome></FaHome> Instructor Home</NavLink></li>
+        <li><NavLink to='/dashboard/instructorHome'> <FaHome></FaHome> Instructor Home</NavLink></li>
         <li><NavLink to='/dashboard/addClass'> <FaBuffer></FaBuffer>
         Add A Class</NavLink></li>
         <li><NavLink to='/dashboard/myClasses'> <FaWallet></FaWallet> My Classes</NavLink></li>
@@ -52,7 +59,7 @@ const Dashboard = () => {
         
         </> : <>
         
-        <li><NavLink to='/dashboard/userhome'><FaHome></FaHome>User Home</NavLink></li>
+        <li><NavLink to='/dashboard/studentHome'><FaHome></FaHome>Student Home</NavLink></li>
         <li><NavLink to='/dashboard/selectedClasses'> <TiTick></TiTick>  My selected Classes</NavLink></li>
         <li><NavLink to='/dashboard/enrollClasses'> <FaBookmark></FaBookmark> My Enrolled Classes</NavLink></li>
         <li><NavLink to='/dashboard/paymentHistory'> <FaBookmark></FaBookmark> Payment History</NavLink></li>
@@ -63,6 +70,7 @@ const Dashboard = () => {
     <div className='divider'></div>
 
        <li><NavLink to='/'> <AiFillHome></AiFillHome> Home</NavLink></li>
+       <li><Link onClick={handleLogOut} ><BiLogOut></BiLogOut> Log out </Link></li>
         {/* <li><NavLink>User Home</NavLink></li> */}
 
     </ul>

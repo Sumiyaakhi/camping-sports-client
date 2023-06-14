@@ -22,6 +22,8 @@ import Feedback from '../Pages/Dashboard/Admin/ManageClasses/Feedback';
 import Payment from '../Pages/Dashboard/User/Payment/Payment';
 import SelectedClassesCard from '../Pages/Dashboard/User/SelectedClasses/SelectedClassesCard';
 import PaymentHistory from '../Pages/Dashboard/User/PaymentHistory/PaymentHistory';
+import InstructorHome from '../Pages/Dashboard/Instructor/InstructorHome/InstructorHome';
+import AdminHome from '../Pages/Dashboard/Admin/AdminHome/AdminHome';
 
 const router = createBrowserRouter([
     {
@@ -56,7 +58,7 @@ const router = createBrowserRouter([
       element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       children:[
         {
-          path:'userhome',
+          path:'studentHome',
           element:<UserHome></UserHome>
         },
         {
@@ -75,6 +77,11 @@ const router = createBrowserRouter([
           path:'paymentHistory',
           element:<PaymentHistory></PaymentHistory>
         },
+        // admin routes
+        {
+          path:'adminhome',
+          element:<AdminRoute><AdminHome></AdminHome></AdminRoute>
+        },
         {
           path:'manageClasses',
           element:<AdminRoute><ManageClasses></ManageClasses></AdminRoute>
@@ -86,6 +93,11 @@ const router = createBrowserRouter([
         {
           path:'manageUsers',
           element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>
+        },
+        // instructor dashboard
+        {
+          path:'instructorHome',
+          element:<InstructorRoute><InstructorHome></InstructorHome></InstructorRoute>
         },
         {
           path:'addClass',

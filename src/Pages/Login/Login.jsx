@@ -61,7 +61,7 @@ const Login = () => {
                   type="text"
                   {...register("email", { required: true })}
                   placeholder="email"
-                  className="input input-bordered"
+                  className="input input-bordered w-2/3"
                 />
                 {errors.email?.type === "required" && (
                   <p role="alert">email is required</p>
@@ -77,7 +77,7 @@ const Login = () => {
                   type={showPassword ? "text" : "password"}
                   {...register("password", { required: true })}
                   placeholder="type password again"
-                  className="input input-bordered"
+                  className="input input-bordered w-2/3"
                 />
                
                 <p
@@ -97,16 +97,16 @@ const Login = () => {
                   </a>
                 </label>
               </div>
-              <div className="form-control mt-6">
+              <div className="form-control mt-6 w-2/3">
                 <input
-                  className="btn btn-primary"
+                  className="btn btn-primary "
                   type="submit"
                   value="Login"
                 />
               </div>
             </form>
             <Link
-              className="text-blue-500 text-center underline mb-4"
+              className="text-blue-500 text-center underline mb-4 "
               to="/registration"
             >
               New Here? create an account

@@ -5,7 +5,7 @@ const EnrollClasses = () => {
     const [enrollClasses, setEnrollClasses] = useState([]);
     const {user}= useContext(AuthContext)
     useEffect(()=>{
-        fetch('http://localhost:5000/payment')
+        fetch(`http://localhost:5000/payments/history?email=${user?.email}`)
         .then(res =>res.json())
         .then(data => {
             console.log(data);

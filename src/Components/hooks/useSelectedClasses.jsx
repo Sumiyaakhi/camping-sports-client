@@ -5,6 +5,7 @@ import useAxiosSecure from "./useAxiosSecure";
 
 const useSelectedClasses = () => {
     const {user,loading} = useContext(AuthContext)
+   
 //   const [selectedClasses, setSelectedClasses] = useState([]);
 //   const [loading, setLoading] = useState(false);
 //   useEffect(() => {
@@ -21,7 +22,7 @@ const useSelectedClasses = () => {
 const token = localStorage.getItem('access-token')
 const [axiosSecure] = useAxiosSecure()
 const {refetch, data: selectedClasses= []} = useQuery({
-    queryKey: ['carts', user?.email],
+    queryKey: ['selectedClasses', user?.email],
     enabled: !loading,
     queryFn: async () => {
         const res = await  axiosSecure(`http://localhost:5000/selectedclasses?email=${user?.email}`)

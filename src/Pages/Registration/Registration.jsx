@@ -72,7 +72,7 @@ createUser(data.email, data.password)
                 </label>
                 <input type="text" 
                 {...register("name", { required: true })}
-                placeholder="email" className="input input-bordered" />
+                placeholder="email" className="input input-bordered w-2/3" />
                  {errors.name && <span className='text-red-500'>This field is required</span>}
               </div>
               <div className="form-control">
@@ -81,7 +81,7 @@ createUser(data.email, data.password)
                 </label>
                 <input type="text" 
                 {...register("photoURL", { required: true })}
-                placeholder="Photo URL" className="input input-bordered" />
+                placeholder="Photo URL" className="input input-bordered w-2/3" />
                  {errors.name && <span className='text-red-500'>This field is required</span>}
               </div>
               <div className="form-control">
@@ -90,7 +90,7 @@ createUser(data.email, data.password)
                 </label>
                 <input type="text" 
                 {...register("email", { required: true })}
-                placeholder="email" className="input input-bordered" />
+                placeholder="email" className="input input-bordered w-2/3" />
                   {errors.email?.type === 'required' && <p role="alert">email is required</p>}
                   
               </div>
@@ -99,7 +99,7 @@ createUser(data.email, data.password)
                   <span className="label-text">Password</span>
                 </label>
                 <input type="password"  {...register("password", { required: true,maxLength:20, minLength:6,pattern:/(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}/ })}
-                placeholder="password" className="input input-bordered" />
+                placeholder="password" className="input input-bordered w-2/3" />
                 {errors.password?.type === 'required' && <p className='text-red-400' role="alert">password is required</p>}
                 {errors.password?.type === 'minLength' && <p className='text-red-400' role="alert">Password must be 6 characters</p>}
                 {errors.password?.type === 'pattern' && <p className='text-red-400' role="alert">Password must have one uppercase, one lowercase, one number and one special character</p>}
@@ -112,9 +112,9 @@ createUser(data.email, data.password)
                   <span className="label-text">Confirm Password</span>
                 </label>
             <input  type="password" {...register("confirmPassword", { required: true })}
-                placeholder="type password again" className="input input-bordered" />
+                placeholder="type password again" className="input input-bordered w-2/3" />
               </div>
-              <div className="form-control mt-6">
+              <div className="form-control mt-6 w-2/3">
                 
                 <input  className="btn text-white bg-blue-500 border-0" type="submit" value="Sign Up" />
               </div>

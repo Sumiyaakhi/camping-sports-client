@@ -24,6 +24,7 @@ const Feedback = () => {
                         <input
                           className="bg-blue-400 text-white btn"
                           type="submit"
+                          value="send"
                         />
                       </form>
         </div>
